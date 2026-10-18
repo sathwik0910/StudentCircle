@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | StudentCircle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-container">
+    <h1>Welcome back</h1>
+    <p>Log in to continue with your study groups.</p>
+
+    <form id="loginForm">
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email"
+             autocomplete="email" required>
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password"
+             autocomplete="current-password" required>
+
+      <button type="submit">Log In</button>
+      <p id="authMessage" role="status"></p>
+    </form>
+
+    <p>New to StudentCircle? <a href="register.html">Create an account</a></p>
+    <p><a href="find-groups.html">Browse study groups</a></p>
+  </main>
+
+  <script src="auth-page.js"></script>
+</body>
+</html>

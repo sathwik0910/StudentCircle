@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Groups | StudentCircle</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">S</span>
+      StudentCircle
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="find-groups.html">Find Groups</a>
+      <a href="my-groups.html" class="active">My Groups</a>
+    </nav>
+
+    <a href="find-groups.html" class="nav-button">Find More Groups</a>
+  </header>
+
+  <main class="container my-groups-page">
+    <section class="page-heading">
+      <span class="eyebrow">YOUR LEARNING JOURNEY</span>
+      <h1>Your circles, your progress.</h1>
+      <p>Keep track of your groups, learning goals, and upcoming sessions.</p>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span class="stat-icon">◎</span>
+        <p>My Groups</p>
+        <h2 id="totalGroups">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">◷</span>
+        <p>Upcoming Sessions</p>
+        <h2 id="upcomingSessions">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">✓</span>
+        <p>Pending Requests</p>
+        <h2 id="pendingRequests">0</h2>
+      </article>
+    </section>
+
+    <section class="my-groups-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR COMMUNITIES</span>
+          <h2>Groups I'm part of</h2>
+          <p>View your join requests and access group details.</p>
+        </div>
+        <a href="find-groups.html" class="text-link">Discover groups →</a>
+      </div>
+
+      <div id="myGroupsContainer" class="my-groups-list"></div>
+
+      <div id="myGroupsEmpty" class="empty-state">
+        <div class="empty-symbol">◎</div>
+        <h3>Your learning circle starts here.</h3>
+        <p>You haven't requested to join any groups yet.</p>
+        <a href="find-groups.html" class="button primary">
+          Explore Study Groups →
+        </a>
+      </div>
+    </section>
+
+    <section class="my-groups-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">KEEP MOVING FORWARD</span>
+          <h2>My learning goals</h2>
+          <p>Set a personal target and track your progress.</p>
+        </div>
+      </div>
+
+      <div class="goal-tracker card">
+        <div class="goal-tracker-top">
+          <div>
+            <h3>Weekly learning target</h3>
+            <p class="muted">How many focused study sessions have you completed?</p>
+          </div>
+          <span id="goalProgressText" class="goal-progress-text">0 / 5</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="goalProgressBar" class="progress-fill"></div>
+        </div>
+
+        <div class="goal-controls">
+          <label for="sessionsCompleted">Sessions completed this week</label>
+          <input id="sessionsCompleted" type="number" min="0" max="5" value="0">
+          <button id="saveGoal" class="button primary" type="button">
+            Save Progress
+          </button>
+          <p id="goalSaveMessage" class="muted" role="status"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="logo">StudentCircle</a>
+    <p>Learn together. Achieve together.</p>
+    <span>© 2026 StudentCircle · SESD Project</span>
+  </footer>
+</body>
+</html>

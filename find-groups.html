@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Groups | StudentCircle</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">S</span>
+      StudentCircle
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="find-groups.html" class="active">Find Groups</a>
+      <a href="my-groups.html">My Groups</a>
+    </nav>
+
+    <button class="button primary" id="openCreateForm">
+      + Create Group
+    </button>
+  </header>
+
+  <main class="container page-content">
+    <section class="page-heading">
+      <span class="eyebrow">YOUR NEXT LEARNING PARTNER</span>
+      <h1>Find your study circle.</h1>
+      <p>Discover people who share your subjects, goals, and interests.</p>
+    </section>
+
+    <section class="search-panel">
+      <div class="search-box">
+        <span>⌕</span>
+        <input
+          type="search"
+          id="groupSearch"
+          placeholder="Search groups, subjects, or topics..."
+          aria-label="Search study groups"
+        >
+      </div>
+
+      <select id="subjectFilter" aria-label="Filter by subject">
+        <option value="all">All subjects</option>
+        <option value="Programming">Programming</option>
+        <option value="AI & ML">AI & ML</option>
+        <option value="Exam Preparation">Exam Preparation</option>
+        <option value="Mathematics">Mathematics</option>
+        <option value="Web Development">Web Development</option>
+      </select>
+
+      <select id="timeFilter" aria-label="Filter by study time">
+        <option value="all">Any study time</option>
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
+      </select>
+    </section>
+
+    <section class="results-heading">
+      <div>
+        <h2>Explore communities</h2>
+        <p id="resultCount">Study groups for every goal.</p>
+      </div>
+      <span class="results-label">OPEN GROUPS</span>
+    </section>
+
+    <section class="group-grid" id="groupsContainer">
+
+      <article class="group-card"
+        data-subject="Programming"
+        data-time="Evening"
+        data-search="data structures dsa algorithms coding programming">
+        <div class="group-card-header">
+          <span class="subject-icon blue">DS</span>
+          <span class="tag">Programming</span>
+        </div>
+        <h3>Data Structures Crew</h3>
+        <p>Practice arrays, linked lists, trees, and algorithms together.</p>
+        <div class="group-meta">
+          <span>👥 8 members</span>
+          <span>◷ Evening</span>
+        </div>
+        <a class="button primary full-width"
+          href="group-details.html?id=dsa">View Group →</a>
+      </article>
+
+      <article class="group-card"
+        data-subject="AI & ML"
+        data-time="Afternoon"
+        data-search="artificial intelligence machine learning python models">
+        <div class="group-card-header">
+          <span class="subject-icon purple">AI</span>
+          <span class="tag purple-tag">AI & ML</span>
+        </div>
+        <h3>AI & ML Learners</h3>
+        <p>Explore machine learning concepts, Python, and small projects.</p>
+        <div class="group-meta">
+          <span>👥 12 members</span>
+          <span>◷ Afternoon</span>
+        </div>
+        <a class="button primary full-width"
+          href="group-details.html?id=aiml">View Group →</a>
+      </article>
+
+      <article class="group-card"
+        data-subject="Exam Preparation"
+        data-time="Morning"
+        data-search="exam revision preparation study notes">
+        <div class="group-card-header">
+          <span class="subject-icon green">EX</span>
+          <span class="tag green-tag">Exam Prep</span>
+        </div>
+        <h3>Exam Prep Circle</h3>
+        <p>Revise important topics, solve questions, and stay accountable.</p>
+        <div class="group-meta">
+          <span>👥 6 members</span>
+          <span>◷ Morning</span>
+        </div>
+        <a class="button primary full-width"
+          href="group-details.html?id=exam">View Group →</a>
+      </article>
+
+      <article class="group-card"
+        data-subject="Mathematics"
+        data-time="Evening"
+        data-search="mathematics calculus probability statistics">
+        <div class="group-card-header">
+          <span class="subject-icon gold">MA</span>
+          <span class="tag gold-tag">Mathematics</span>
+        </div>
+        <h3>Math Minds</h3>
+        <p>Learn concepts and solve challenging numerical problems together.</p>
+        <div class="group-meta">
+          <span>👥 7 members</span>
+          <span>◷ Evening</span>
+        </div>
+        <a class="button primary full-width"
+          href="group-details.html?id=math">View Group →</a>
+      </article>
+
+      <article class="group-card"
+        data-subject="Web Development"
+        data-time="Afternoon"
+        data-search="web development html css javascript frontend">
+        <div class="group-card-header">
+          <span class="subject-icon pink">WD</span>
+          <span class="tag pink-tag">Web Development</span>
+        </div>
+        <h3>Web Builders</h3>
+        <p>Build websites, share ideas, and practice frontend development.</p>
+        <div class="group-meta">
+          <span>👥 9 members</span>
+          <span>◷ Afternoon</span>
+        </div>
+        <a class="button primary full-width"
+          href="group-details.html?id=web">View Group →</a>
+      </article>
+
+    </section>
+
+    <div id="emptyState" class="empty-state" hidden>
+      <h3>No groups found</h3>
+      <p>Try another search term or choose a different filter.</p>
+      <button class="button secondary" id="resetFilters">Clear filters</button>
+    </div>
+
+    <section class="create-panel" id="createPanel" hidden>
+      <div class="create-panel-header">
+        <div>
+          <span class="eyebrow">START A COMMUNITY</span>
+          <h2>Create a study group</h2>
+          <p>Bring students together around a shared learning goal.</p>
+        </div>
+        <button type="button" id="closeCreateForm"
+          class="close-button" aria-label="Close form">✕</button>
+      </div>
+
+      <form id="createGroupForm">
+        <label for="groupName">Group name</label>
+        <input id="groupName" name="groupName"
+          placeholder="e.g. Java Coding Circle" required maxlength="60">
+
+        <label for="groupSubject">Subject</label>
+        <select id="groupSubject" name="groupSubject" required>
+          <option value="">Select a subject</option>
+          <option>Programming</option>
+          <option>AI & ML</option>
+          <option>Exam Preparation</option>
+          <option>Mathematics</option>
+          <option>Web Development</option>
+        </select>
+
+        <label for="groupDescription">Description</label>
+        <textarea id="groupDescription" name="groupDescription"
+          placeholder="What will your group learn together?"
+          required maxlength="300" rows="3"></textarea>
+
+        <label for="groupTime">Preferred study time</label>
+        <select id="groupTime" name="groupTime" required>
+          <option value="">Choose a time</option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+        </select>
+
+        <button class="button primary" type="submit">Create Group</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="logo">StudentCircle</a>
+    <p>Learn together. Achieve together.</p>
+    <span>© 2026 StudentCircle · SESD Project</span>
+  </footer>
+
+</body>
+</html>
